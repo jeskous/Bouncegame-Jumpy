@@ -1,0 +1,36 @@
+﻿<Window x:Name="window_window" x:Class="Bouncegame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bouncegame"
+        mc:Ignorable="d"
+        Title="Jumpy_mk1" Height="490.088" Width="634.245" SizeChanged="window_window_SizeChanged">
+    <Grid x:Name="grid_window" Background="#FFFBE6B8">
+        <Button x:Name="btn_go" Content="Go" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="btn_go_Click"/>
+        <Label x:Name="lbl_score" Content="Score:" HorizontalAlignment="Left" Margin="519,10,0,0" VerticalAlignment="Top" Width="81"/>
+        <Canvas x:Name="canv_ballSpace" Background="Transparent" Panel.ZIndex="-1">
+            <Ellipse x:Name="ellip_ball" Height="80" Width="80" Canvas.Left="240" Canvas.Top="93" MouseLeftButtonDown="ellip_ball_MouseLeftButtonDown" MouseLeave="ellip_ball_MouseLeave" MouseLeftButtonUp="ellip_ball_MouseLeftButtonUp" Fill="White"/>
+            <Label x:Name="lbl_status" Content="Label" Canvas.Left="523" Canvas.Top="356" Width="66"/>
+            <Slider x:Name="slid_speedControl" Canvas.Left="168" Canvas.Top="45" Width="119" ValueChanged="slid_speedControl_ValueChanged" PreviewMouseWheel="slid_speedControl_PreviewMouseWheel"/>
+            <Label x:Name="lbl_difficulty" Content="Difficulty: default" Canvas.Left="168" Canvas.Top="10" Width="119"/>
+            <CheckBox x:Name="cb_isDevMode" Content="Developer Mode" Canvas.Left="10" Canvas.Top="45" Click="cb_isDevMode_Click"/>
+            <CheckBox x:Name="cb_isModeHardcore" Content="Hardcore Mode" Canvas.Left="10" Canvas.Top="65" Click="cb_isDevMode_Click" Unchecked="cb_isModeHardcore_Unchecked"/>
+            <Canvas Height="80" Width="103" Canvas.Left="10" Canvas.Top="112">
+                <RadioButton x:Name="rb_white" Content="White" IsChecked="true" GroupName="colors" Checked="rb_white_Checked"/>
+                <RadioButton x:Name="rb_img" Content="Image" Canvas.Top="60" GroupName="colors" Checked="rb_img_Checked"/>
+                <RadioButton x:Name="rb_green" Content="Green" Canvas.Top="40" GroupName="colors" Checked="rb_green_Checked"/>
+                <RadioButton x:Name="rb_black" Content="Black" Canvas.Top="20" GroupName="colors" Checked="rb_black_Checked"/>
+            </Canvas>
+            <CheckBox x:Name="cb_hasGravity" Content="Gravity" Canvas.Left="10" Canvas.Top="85" Click="cb_isDevMode_Click" Unchecked="cb_isModeHardcore_Unchecked"/>
+        </Canvas>
+        <CheckBox x:Name="cb_x" Content="x" HorizontalAlignment="Left" Margin="11,258,0,0" VerticalAlignment="Top" VerticalContentAlignment="Bottom" />
+        <CheckBox x:Name="cb_y" Content="y" HorizontalAlignment="Left" Margin="60,258,0,0" VerticalAlignment="Top" VerticalContentAlignment="Bottom"/>
+        <Label x:Name="lbl_jumpRight" Content="Jump Right: " HorizontalAlignment="Left" Margin="11,278,0,0" VerticalAlignment="Top" VerticalContentAlignment="Bottom"/>
+        <Label x:Name="lbl_jumpDown" Content="Jump Down: " HorizontalAlignment="Left" Margin="10,308,0,0" VerticalAlignment="Top" VerticalContentAlignment="Bottom"/>
+        <Label x:Name="lbl_windowWidthAndBallLeft" Content="Window width: + Ball Left " HorizontalAlignment="Left" Margin="11,340,0,0" VerticalAlignment="Top" VerticalContentAlignment="Bottom"/>
+        <Label x:Name="lbl_windowHeigthAndBallTop" Content="Window heigth: + Ball Top" HorizontalAlignment="Left" Margin="11,366,0,0" VerticalAlignment="Top" VerticalContentAlignment="Bottom"/>
+        <Label x:Name="lbl_velocity" Content="Velocity:" HorizontalAlignment="Left" Margin="10,397,0,0" VerticalAlignment="Top" VerticalContentAlignment="Bottom"/>
+        <Label x:Name="lbl_friction" Content="Friction:" HorizontalAlignment="Left" Margin="10,423,0,0" VerticalAlignment="Top" VerticalContentAlignment="Bottom"/>
+    </Grid>
+</Window>
